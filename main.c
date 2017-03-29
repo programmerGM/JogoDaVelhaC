@@ -4,7 +4,7 @@
 #include <locale.h>
 #include "prototipos.h"
 
-int main(char argc, char* argv[]){
+int main(char argc, char* argv[]) {
 	setlocale(LC_ALL, "Portuguese");
 	char a;
 	do{

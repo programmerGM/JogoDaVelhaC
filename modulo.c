@@ -1,6 +1,6 @@
 #include "prototipos.h"
 
-void menu(){
+void menu() {
 	int opcao;
 
 	do{
@@ -17,13 +17,13 @@ void menu(){
 		if (opcao == 1)
 			jogar();
 		else
-			if (opcao != 0 ){
+			if (opcao != 0 ) {
 				puts("\n\t      --------------------------------");
 				puts("\t      Opção Inválida, tente novamente.");
 				puts("\t      --------------------------------\n");
 				system("pause");
 			}
-	}while(opcao != 0);
+	} while(opcao != 0);
 
 	puts("\n\t     ------------------------------------");
 	printf("\t       O programa está sendo encerrrado\n");
@@ -31,7 +31,7 @@ void menu(){
 
 }
 
-int calculaJogador(){
+int calculaJogador() {
 	static int vez = 0;
 
 	if (vez%2 == 0){
@@ -44,7 +44,7 @@ int calculaJogador(){
 	}
 }
 
-void zeraTabuleiro(int tabuleiro[][TAM]){
+void zeraTabuleiro(int tabuleiro[][TAM]) {
 	int linha;
 	int coluna;
 
@@ -53,13 +53,13 @@ void zeraTabuleiro(int tabuleiro[][TAM]){
 		tabuleiro[linha][coluna] = 0;
 }
 
-void imprimeTabuleiro(int tabuleiro[][TAM]){
+void imprimeTabuleiro(int tabuleiro[][TAM]) {
 	int linha;
 	int coluna;
 
-	for(linha = 0; linha < TAM; linha++){
+	for(linha = 0; linha < TAM; linha++) {
         printf("\t\t         ");
-        for(coluna = 0; coluna < TAM; coluna++){
+        for(coluna = 0; coluna < TAM; coluna++) {
             if(tabuleiro[linha][coluna] == 0)
                 printf("   ");
             else
@@ -81,7 +81,7 @@ void imprimeTabuleiro(int tabuleiro[][TAM]){
     putchar('\n');
 }
 
-int verificaEmpate(int tabuleiro[][TAM]){
+int verificaEmpate(int tabuleiro[][TAM]) {
 	int i, j;
 
 	for (i = 0; i < TAM; i++)
@@ -91,7 +91,7 @@ int verificaEmpate(int tabuleiro[][TAM]){
 	return 1;
 }
 
-int verificaVencedor(int tabuleiro[][TAM]){
+int verificaVencedor(int tabuleiro[][TAM]) {
     int i, j;
     int somal = 0;
     int somac = 0;
@@ -130,7 +130,7 @@ int verificaVencedor(int tabuleiro[][TAM]){
 	return 0;
 }
 
-void jogar(){
+void jogar() {
 	int vez = 0;
 	int vencedor = 0;
     int rodada = 1;
@@ -166,26 +166,26 @@ void jogar(){
 	rodada = 1;
 }
 
-int verificaTabuleiro(int tabuleiro[][TAM], int linha, int coluna){
+int verificaTabuleiro(int tabuleiro[][TAM], int linha, int coluna) {
 	if (linha < 0 || linha > TAM-1 || coluna < 0 || coluna > TAM-1 || tabuleiro[linha][coluna] != 0)
 		return 0;
 	else
 		return 1;
 }
 
-void marcarJogada(int tabuleiro[][TAM], int linha, int coluna, int vez){
+void marcarJogada(int tabuleiro[][TAM], int linha, int coluna, int vez) {
 	if (vez == 1)
 		tabuleiro[linha][coluna] = 1;
 	else
 		tabuleiro[linha][coluna] = -1;
 }
 
-void jogada(int tabuleiro[][TAM], int vez, int rodada){
+void jogada(int tabuleiro[][TAM], int vez, int rodada) {
 	int linha;
 	int coluna;
 	int livre;
 
-	do{
+	do {
 		puts("\t\t------------------------------");
 		printf("\t\t        ===RODADA %d===\n", rodada);
         printf("\t\t        ===PLAYER %d===\n", vez);
@@ -208,6 +208,6 @@ void jogada(int tabuleiro[][TAM], int vez, int rodada){
 			system("pause");
 			system("cls");
 		}
-	}while(livre == 0);
+	} while(livre == 0);
 	marcarJogada(tabuleiro, linha, coluna, vez);
 }
