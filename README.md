@@ -1,5 +1,3 @@
- Jogo da velha criado em C.
- 
- Exclusivo para Windows devido a biblioteca "windows.h".
+## Jogo da velha C
 
-* @Author: Maurício Generoso
+Jogo da velha com linguagem C. Exclusivo windows devido a biblioteca 'windows.h'.
